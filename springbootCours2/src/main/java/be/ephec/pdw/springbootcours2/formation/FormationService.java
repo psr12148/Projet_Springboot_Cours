@@ -17,6 +17,11 @@ public class FormationService {
         return formationRepository.findAll();
     }
 
+    public List<Formation> findAllAngularRelatedFormations()
+    {
+        return formationRepository.findAllAngularRelatedFormations();
+    }
+
     public Optional<Formation> findById(UUID id)
     {
         return formationRepository.findById(id);

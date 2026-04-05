@@ -19,6 +19,12 @@ public class FormationController {
     @GetMapping(produces = "application/json")
     public List<FormationDTO> getFormations() { return formationMapper.toDtoList(formationService.findAll()); }
 
+    @GetMapping(path = "/angular", produces = "application/json")
+    public List<FormationDTO> getAngularRelatedFormations()
+    {
+        return formationMapper.toDtoList(formationService.findAllAngularRelatedFormations());
+    }
+
     @GetMapping(path = "/{id}", produces = "application/json")
     public ResponseEntity<FormationDTO> formationById(@PathVariable("id") UUID id) {
         return ResponseEntity.of(
